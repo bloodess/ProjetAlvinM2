@@ -26,8 +26,9 @@ app.options('/api/*', function (request, response, next) {
     response.send();
 });
 
-// retourne un personnage avec c'est info et son image
-app.get('/personnage', gestion.getPersonnage);
+
+// retourne tous les personnages (test)
+app.get('/personnages', gestion.getPersonnages);
 
 
 app.listen(port);
