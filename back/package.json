@@ -1,0 +1,16 @@
+{
+  "name": "swapicdc",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "4.x",
+    "body-parser": "*",
+    "node-rest-client": "*"
+  },
+  "author": "SW Corp.",
+  "license": "SW Corp.", 
+  "scripts": { 
+	"start" : "node app.js"
+  }
+}
