@@ -27,9 +27,7 @@ app.options('/api/*', function (request, response, next) {
 });
 
 
-// retourne tous les personnages (test)
-app.get('/personnages', gestion.getPersonnages);
-
+app.get('/games', gestion.games);
 
 app.listen(port);
 console.log('SERVICE - Listening on port ' + port + '...');

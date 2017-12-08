@@ -1,13 +1,17 @@
 "use strict";
 
-var Client = require('node-rest-client').Client;
-var client = new Client();
+//var Client = require('node-rest-client').Client;
+//var client = new Client();
 
-var hostswapi = "https://swapi.co/api";
+//var hostswapi = "https://swapi.co/api";
+var data = require('./data.json');
 
-exports.getPersonnage = function(req, res) {
+exports.games = function(req, res) {
+	res.json(data);
+}
 
 
+/*
 	var arg = {
 	 	headers: 
 		{ 
@@ -20,5 +24,4 @@ exports.getPersonnage = function(req, res) {
 	}).on('error', function(error) {
 		res.json({Title: false});
 	});
-
-}
+*/
