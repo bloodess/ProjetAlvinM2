@@ -7,7 +7,8 @@
             "planet_orgin": "",
             "height":"",
             "mass":"",
-            "url_image": "http://www.journaldugeek.com/wp-content/blogs.dir/1/files/2017/11/Luke-Skywalker-Star-Wars-The-Last-Jedi-600x864.jpg"
+            "url_image": "http://www.journaldugeek.com/wp-content/blogs.dir/1/files/2017/11/Luke-Skywalker-Star-Wars-The-Last-Jedi-600x864.jpg",
+            "films": [{name: "film 1"}]
         },
         {
             "name": "R2D2",
@@ -16,16 +17,8 @@
             "planete_orgin": "",
             "height":"",
             "mass":"",
-            "url_image": "https://vignette.wikia.nocookie.net/fr.starwars/images/0/0c/R2-D2.png/revision/latest/scale-to-width-down/1000?cb=20161110201414"
-        },
-        {
-            "name": "R2D2",
-            "gender": "X",
-            "species": "Robot",
-            "planete_orgin": "",
-            "height":"",
-            "mass":"",
-            "url_image": "https://vignette.wikia.nocookie.net/fr.starwars/images/0/0c/R2-D2.png/revision/latest/scale-to-width-down/1000?cb=20161110201414"
+            "url_image": "https://vignette.wikia.nocookie.net/fr.starwars/images/0/0c/R2-D2.png/revision/latest/scale-to-width-down/1000?cb=20161110201414",
+            "films": [{name: "film 1"},{name: "film 2"}]
         },
         {
             "name": "Obi_Wan_Kenobi",
@@ -34,7 +27,8 @@
             "planete_orgin": "",
             "height":"",
             "mass":"",
-            "url_image": "https://vignette.wikia.nocookie.net/fr.starwars/images/c/c5/Obi_Wan_Kenobi.jpg/revision/latest?cb=20150207143827"
+            "url_image": "https://vignette.wikia.nocookie.net/fr.starwars/images/c/c5/Obi_Wan_Kenobi.jpg/revision/latest?cb=20150207143827",
+            "films": [{name: "film 2"}]
         },
         {
             "name": "REy",
@@ -43,7 +37,8 @@
             "planete_orgin": "",
             "height":"",
             "mass":"",
-            "url_image": "http://images6.fanpop.com/image/photos/39100000/Rey-SW-The-Force-Awakens-star-wars-the-force-awakens-movie-39101649-640-958.jpg"
+            "url_image": "http://images6.fanpop.com/image/photos/39100000/Rey-SW-The-Force-Awakens-star-wars-the-force-awakens-movie-39101649-640-958.jpg",
+            "films": [{name: "film 3"}]
         },
         {
             "name": "Yoda",
@@ -52,7 +47,8 @@
             "planete_orgin": "",
             "height":"",
             "mass":"",
-            "url_image": "https://vignette.wikia.nocookie.net/fr.starwars/images/5/5f/Yoda.png/revision/latest/scale-to-width-down/700?cb=20161009183018"
+            "url_image": "https://vignette.wikia.nocookie.net/fr.starwars/images/5/5f/Yoda.png/revision/latest/scale-to-width-down/700?cb=20161009183018",
+            "films": [{name: "film 5"}]
         }
     ]
 }
