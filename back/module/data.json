@@ -1,57 +1,57 @@
 {
-    "personnages": [
+    "peoples": [
         {
-            "nom": "Luke S.",
-            "genre": "Male",
-            "espece": "Humain",
-            "planete_orgin": "",
-            "taille":"",
-            "poids":"",
+            "name": "Luke S.",
+            "gender": "Male",
+            "species": "Humain",
+            "planet_orgin": "",
+            "height":"",
+            "mass":"",
             "url_image": "http://www.journaldugeek.com/wp-content/blogs.dir/1/files/2017/11/Luke-Skywalker-Star-Wars-The-Last-Jedi-600x864.jpg"
         },
         {
-            "nom": "R2D2",
-            "genre": "X",
-            "espece": "Robot",
+            "name": "R2D2",
+            "gender": "X",
+            "species": "Robot",
             "planete_orgin": "",
-            "taille":"",
-            "poids":"",
+            "height":"",
+            "mass":"",
             "url_image": "https://vignette.wikia.nocookie.net/fr.starwars/images/0/0c/R2-D2.png/revision/latest/scale-to-width-down/1000?cb=20161110201414"
         },
         {
-            "nom": "R2D2",
-            "genre": "X",
-            "espece": "Robot",
+            "name": "R2D2",
+            "gender": "X",
+            "species": "Robot",
             "planete_orgin": "",
-            "taille":"",
-            "poids":"",
+            "height":"",
+            "mass":"",
             "url_image": "https://vignette.wikia.nocookie.net/fr.starwars/images/0/0c/R2-D2.png/revision/latest/scale-to-width-down/1000?cb=20161110201414"
         },
         {
-            "nom": "Obi_Wan_Kenobi",
-            "genre": "X",
-            "espece": "Humain",
+            "name": "Obi_Wan_Kenobi",
+            "gender": "X",
+            "species": "Humain",
             "planete_orgin": "",
-            "taille":"",
-            "poids":"",
+            "height":"",
+            "mass":"",
             "url_image": "https://vignette.wikia.nocookie.net/fr.starwars/images/c/c5/Obi_Wan_Kenobi.jpg/revision/latest?cb=20150207143827"
         },
         {
-            "nom": "REy",
-            "genre": "X",
-            "espece": "Humain",
+            "name": "REy",
+            "gender": "X",
+            "species": "Humain",
             "planete_orgin": "",
-            "taille":"",
-            "poids":"",
+            "height":"",
+            "mass":"",
             "url_image": "http://images6.fanpop.com/image/photos/39100000/Rey-SW-The-Force-Awakens-star-wars-the-force-awakens-movie-39101649-640-958.jpg"
         },
         {
-            "nom": "Yoda",
-            "genre": "X",
-            "espece": "Humain",
+            "name": "Yoda",
+            "gender": "X",
+            "species": "Humain",
             "planete_orgin": "",
-            "taille":"",
-            "poids":"",
+            "height":"",
+            "mass":"",
             "url_image": "https://vignette.wikia.nocookie.net/fr.starwars/images/5/5f/Yoda.png/revision/latest/scale-to-width-down/700?cb=20161009183018"
         }
     ]

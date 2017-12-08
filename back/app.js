@@ -27,7 +27,7 @@ app.options('/api/*', function (request, response, next) {
 });
 
 
-app.get('/games', gestion.games);
+app.get('/peoples', gestion.peoples);
 
 app.listen(port);
 console.log('SERVICE - Listening on port ' + port + '...');

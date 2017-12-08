@@ -6,7 +6,7 @@
 //var hostswapi = "https://swapi.co/api";
 var data = require('./data.json');
 
-exports.games = function(req, res) {
+exports.peoples = function(req, res) {
 	res.json(data);
 }
 
