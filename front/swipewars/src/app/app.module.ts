@@ -9,7 +9,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+
 import { RestProvider } from '../providers/rest/rest';
+
+import { HttpModule } from '@angular/http';
+import { SwingModule } from 'angular2-swing';
+
 
 @NgModule({
   declarations: [
@@ -19,6 +24,8 @@ import { RestProvider } from '../providers/rest/rest';
   imports: [
     BrowserModule,
     HttpClientModule,
+    HttpModule,
+    SwingModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
