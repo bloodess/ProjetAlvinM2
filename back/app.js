@@ -3,9 +3,8 @@
 
 var express = require('express');
 var bodyParser  = require('body-parser');
-
 var	gestion = require('./module/gestion');
-
+var google = require('./module/googleapi');
 var app = express();
 var port = process.env.PORT || 3000;
 
@@ -21,12 +20,13 @@ app.use(function(req, res, next) {
 });
 
 
+//N'autorise que le GET et le POST dans le header HTML
 app.options('/api/*', function (request, response, next) {
     response.header("Access-Control-Allow-Methods", "GET, POST");
     response.send();
 });
 
-
+app.get('/images', google.images);
 app.get('/peoples', gestion.peoples);
 
 app.listen(port);
