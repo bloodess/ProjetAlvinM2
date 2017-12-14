@@ -26,6 +26,8 @@ export class HomePage {
   cards: Array<any>;
   stackConfig: StackConfig;
   recentCard: string = '';
+  knowCards: Array<any>;
+  unknowCards : Array<any>;
 
   constructor(private http: Http, public restProvider: RestProvider) {
     this.stackConfig = {
@@ -42,7 +44,8 @@ export class HomePage {
   }
 
   getPeoples() {
-    this.restProvider.getPeoples().then(data => {
+    //TODO add class data
+    this.restProvider.getPeoples().then((data: any) => {
       this.cards = data.peoples;
     });
   }
@@ -58,6 +61,8 @@ export class HomePage {
     
     this.getPeoples();
     this.cards = [{name: ''}];
+    this.knowCards = [];
+    this.unknowCards = [];
   }
 
   // Called whenever we drag an element
@@ -81,9 +86,17 @@ onItemMove(element, x, y, r) {
 voteUp(like: boolean) {
   let removedCard = this.cards.pop();
   if (like) {
+    this.knowCards.push(removedCard);
     this.recentCard = 'You know: ' + removedCard.name;
   } else {
+    this.unknowCards.push(removedCard);
     this.recentCard = 'You do not know : ' + removedCard.name;
+  }
+
+  if(this.cards.length == 0) {
+    console.log("C'est fini !");
+    console.log(this.knowCards);
+    console.log(this.unknowCards);
   }
 }
 
