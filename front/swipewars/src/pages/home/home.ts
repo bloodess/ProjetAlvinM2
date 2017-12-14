@@ -3,7 +3,7 @@ import { NavController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { Observable } from "rxjs/Observable";
 import 'rxjs/Rx';
- 
+
 import {
   StackConfig,
   Stack,
@@ -55,7 +55,7 @@ export class HomePage {
     this.swingStack.throwin.subscribe((event: DragEvent) => {
       event.target.style.background = '#ffffff';
     });
-    
+
     this.getPeoples();
     this.cards = [{name: ''}];
   }
@@ -66,17 +66,17 @@ onItemMove(element, x, y, r) {
   var abs = Math.abs(x);
   let min = Math.trunc(Math.min(16*16 - abs, 16*16));
   let hexCode = this.decimalToHex(min, 2);
-  
+
   if (x < 0) {
     color = '#FF' + hexCode + hexCode;
   } else {
     color = '#' + hexCode + 'FF' + hexCode;
   }
-  
+
   element.style.background = color;
   element.style['transform'] = `translate3d(0, 0, 0) translate(${x}px, ${y}px) rotate(${r}deg)`;
 }
- 
+
 // Connected through HTML
 voteUp(like: boolean) {
   let removedCard = this.cards.pop();
@@ -90,11 +90,11 @@ voteUp(like: boolean) {
 decimalToHex(d, padding) {
   var hex = Number(d).toString(16);
   padding = typeof (padding) === "undefined" || padding === null ? padding = 2 : padding;
-  
+
   while (hex.length < padding) {
     hex = "0" + hex;
   }
-  
+
   return hex;
 }
 
