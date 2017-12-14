@@ -1,6 +1,7 @@
 import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { Http } from '@angular/http';
+import { Observable } from "rxjs/Observable";
 import 'rxjs/Rx';
  
 import {
@@ -22,6 +23,12 @@ import { RestProvider } from '../../providers/rest/rest';
 })
 export class HomePage {
 
+  cards: Array<any>;
+  stackConfig: StackConfig;
+  recentCard: string = '';
+  knowCards: Array<any>;
+  unknowCards : Array<any>;
+
   constructor(private http: Http, public restProvider: RestProvider) {
     this.stackConfig = {
       throwOutConfidence: (offsetX, offsetY, element) => {
@@ -34,24 +41,17 @@ export class HomePage {
         return 800;
       }
     };
-    this.getPeoples();
   }
 
-
   getPeoples() {
-    this.restProvider.getPeoples().then(data => {
-      console.log(data);
+    //TODO add class data
+    this.restProvider.getPeoples().then((data: any) => {
+      this.cards = data.peoples;
     });
   }
 
   @ViewChild('myswing1') swingStack: SwingStackComponent;
   @ViewChildren('mycards1') swingCards: QueryList<SwingCardComponent>;
-
-  cards: Array<any>;
-  stackConfig: StackConfig;
-  recentCard: string = '';
-
-
 
   ngAfterViewInit() {
     // Either subscribe in controller or set in HTML
@@ -59,8 +59,10 @@ export class HomePage {
       event.target.style.background = '#ffffff';
     });
     
-    this.cards = [{email: ''}];
-    this.addNewCards(1);
+    this.getPeoples();
+    this.cards = [{name: ''}];
+    this.knowCards = [];
+    this.unknowCards = [];
   }
 
   // Called whenever we drag an element
@@ -83,26 +85,21 @@ onItemMove(element, x, y, r) {
 // Connected through HTML
 voteUp(like: boolean) {
   let removedCard = this.cards.pop();
-  this.addNewCards(1);
   if (like) {
-    this.recentCard = 'You liked: ' + removedCard.email;
+    this.knowCards.push(removedCard);
+    this.recentCard = 'You know: ' + removedCard.name;
   } else {
-    this.recentCard = 'You disliked: ' + removedCard.email;
+    this.unknowCards.push(removedCard);
+    this.recentCard = 'You do not know : ' + removedCard.name;
+  }
+
+  if(this.cards.length == 0) {
+    console.log("C'est fini !");
+    console.log(this.knowCards);
+    console.log(this.unknowCards);
   }
 }
- 
-// Add new cards to our array
-addNewCards(count: number) {
-  this.http.get('https://randomuser.me/api/?results=' + count)
-  .map(data => data.json().results)
-  .subscribe(result => {
-    for (let val of result) {
-      this.cards.push(val);
-    }
-  })
-}
- 
-// http://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hex-in-javascript
+
 decimalToHex(d, padding) {
   var hex = Number(d).toString(16);
   padding = typeof (padding) === "undefined" || padding === null ? padding = 2 : padding;
