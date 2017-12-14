@@ -1,12 +1,25 @@
 "use strict";
 
 
+var	swapi = require('./swapi');
 
-
-
-
-var data = require('./data.json');
 
 exports.peoples = function(req, res) {
-	res.json(data);
+
+	swapi.getPeoplesData(function(data){
+		res.json(data);
+	});
+
 }
+
+
+exports.films = function(req, res){
+	
+	swapi.films(req.body, function(data){
+		res.json(data);
+	});
+
+}
+
+
+// ici faire une fonction auto pour le cheragement des datas

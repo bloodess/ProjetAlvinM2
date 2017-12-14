@@ -28,6 +28,7 @@ app.options('/api/*', function (request, response, next) {
 
 
 app.get('/peoples', gestion.peoples);
+app.post('/films', gestion.films);
 
 app.listen(port);
 console.log('SERVICE - Listening on port ' + port + '...');
