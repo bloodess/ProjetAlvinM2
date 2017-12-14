@@ -26,7 +26,7 @@ app.options('/api/*', function (request, response, next) {
     response.send();
 });
 
-
+app.get('/images', googleapi.images);
 app.get('/peoples', gestion.peoples);
 
 app.listen(port);
