@@ -1,7 +1,5 @@
 import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Http } from '@angular/http';
-import { Observable } from "rxjs/Observable";
 import 'rxjs/Rx';
  
 import {
@@ -15,7 +13,7 @@ import {
 
 
 import { RestProvider } from '../../providers/rest/rest';
-
+import { ResultPage } from '../result/result';
 
 @Component({
   selector: 'page-home',
@@ -28,8 +26,9 @@ export class HomePage {
   recentCard: string = '';
   knowCards: Array<any>;
   unknowCards : Array<any>;
+  resultPage:any = ResultPage;
 
-  constructor(private http: Http, public restProvider: RestProvider) {
+  constructor( public restProvider: RestProvider, public navCtrl: NavController) {
     this.stackConfig = {
       throwOutConfidence: (offsetX, offsetY, element) => {
         return Math.min(Math.abs(offsetX) / (element.offsetWidth/2), 1);
@@ -94,9 +93,10 @@ voteUp(like: boolean) {
   }
 
   if(this.cards.length == 0) {
-    console.log("C'est fini !");
-    console.log(this.knowCards);
-    console.log(this.unknowCards);
+    this.navCtrl.push(ResultPage, {
+      peoplesKnow: this.knowCards,
+      peoplesUnknow: this.unknowCards
+    });
   }
 }
 
@@ -109,6 +109,11 @@ decimalToHex(d, padding) {
   }
   
   return hex;
+}
+
+ionViewWillEnter() {
+  this.ngAfterViewInit();
+  this.recentCard = '';
 }
 
 }
