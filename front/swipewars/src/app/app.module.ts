@@ -14,12 +14,14 @@ import { RestProvider } from '../providers/rest/rest';
 
 import { HttpModule } from '@angular/http';
 import { SwingModule } from 'angular2-swing';
+import { ResultPage } from '../pages/result/result';
 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    ResultPage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +33,8 @@ import { SwingModule } from 'angular2-swing';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    ResultPage
   ],
   providers: [
     StatusBar,
