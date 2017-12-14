@@ -16,8 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ResultPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    console.log(this.navParams.get('peoplesKnow'));
-    console.log(this.navParams.get('peoplesUnknow'));
+    console.log(this.navParams.get('movieToSee'));
   }
 
   ionViewDidLoad() {
