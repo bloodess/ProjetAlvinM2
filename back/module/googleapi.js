@@ -4,16 +4,14 @@ var Client = require('node-rest-client').Client;
 var client = new Client();
 var searchType = 'image';
 var safe = 'off';
-var key = 'AIzaSyAfI9vDrYuRzNVHfXdxjc58dW6tInLiyNk'
-var cx = '013773035180240197132:wb9fxn31moc';
+var key = 'AIzaSyAfI9vDrYuRzNVHfXdxjc58dW6tInLiyNk' // Key de l'api
+var cx = '013773035180240197132:wb9fxn31moc'; // "adresse" du moteur de recherche
 
-var url = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&q=';
-
-// GET https://www.googleapis.com/customsearch/v1?key=INSERT_YOUR_API_KEY&cx=017576662512468239146:omuauf_lfve&q=lectures
+var url = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&q='; // mettre le nom du personnage après le &q=
 
 
 
-http.get(url, (res) => {
+exports.images = http.get(url, (res) => {
     const { statusCode } = res;
     const contentType = res.headers['content-type'];
   
@@ -35,8 +33,7 @@ http.get(url, (res) => {
     res.on('data', (chunk) => { rawData += chunk; });
     res.on('end', () => {
       try {
-        const parsedData = JSON.parse(rawData);
-        return(parsedData);
+        res.JSON.parse(rawData);
       } catch (e) {
         console.error(e.message);
       }
@@ -45,7 +42,7 @@ http.get(url, (res) => {
     console.error(`Got error: ${e.message}`);
   });
 
-module.exports = images;
+
 
 
 
