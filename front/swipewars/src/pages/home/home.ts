@@ -1,6 +1,5 @@
 import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Http } from '@angular/http';
 import 'rxjs/Rx';
  
 import {
@@ -14,7 +13,7 @@ import {
 
 
 import { RestProvider } from '../../providers/rest/rest';
-
+import { ResultPage } from '../result/result';
 
 @Component({
   selector: 'page-home',
@@ -22,7 +21,14 @@ import { RestProvider } from '../../providers/rest/rest';
 })
 export class HomePage {
 
-  constructor(private http: Http, public restProvider: RestProvider) {
+  cards: Array<any>;
+  stackConfig: StackConfig;
+  recentCard: string = '';
+  knowCards: Array<any>;
+  unknowCards : Array<any>;
+  resultPage:any = ResultPage;
+
+  constructor( public restProvider: RestProvider, public navCtrl: NavController) {
     this.stackConfig = {
       throwOutConfidence: (offsetX, offsetY, element) => {
         return Math.min(Math.abs(offsetX) / (element.offsetWidth/2), 1);
@@ -34,24 +40,17 @@ export class HomePage {
         return 800;
       }
     };
-    this.getPeoples();
   }
 
-
   getPeoples() {
-    this.restProvider.getPeoples().then(data => {
-      console.log(data);
+    //TODO add class data
+    this.restProvider.getPeoples().then((data: any) => {
+      this.cards = data.peoples;
     });
   }
 
   @ViewChild('myswing1') swingStack: SwingStackComponent;
   @ViewChildren('mycards1') swingCards: QueryList<SwingCardComponent>;
-
-  cards: Array<any>;
-  stackConfig: StackConfig;
-  recentCard: string = '';
-
-
 
   ngAfterViewInit() {
     // Either subscribe in controller or set in HTML
@@ -59,59 +58,107 @@ export class HomePage {
       event.target.style.background = '#ffffff';
     });
     
-    this.cards = [{email: ''}];
-    this.addNewCards(1);
+    this.getPeoples();
+    this.cards = [{name: ''}];
+    this.knowCards = [];
+    this.unknowCards = [];
   }
 
   // Called whenever we drag an element
-onItemMove(element, x, y, r) {
-  var color = '';
-  var abs = Math.abs(x);
-  let min = Math.trunc(Math.min(16*16 - abs, 16*16));
-  let hexCode = this.decimalToHex(min, 2);
-  
-  if (x < 0) {
-    color = '#FF' + hexCode + hexCode;
-  } else {
-    color = '#' + hexCode + 'FF' + hexCode;
-  }
-  
-  element.style.background = color;
-  element.style['transform'] = `translate3d(0, 0, 0) translate(${x}px, ${y}px) rotate(${r}deg)`;
-}
- 
-// Connected through HTML
-voteUp(like: boolean) {
-  let removedCard = this.cards.pop();
-  this.addNewCards(1);
-  if (like) {
-    this.recentCard = 'You liked: ' + removedCard.email;
-  } else {
-    this.recentCard = 'You disliked: ' + removedCard.email;
-  }
-}
- 
-// Add new cards to our array
-addNewCards(count: number) {
-  this.http.get('https://randomuser.me/api/?results=' + count)
-  .map(data => data.json().results)
-  .subscribe(result => {
-    for (let val of result) {
-      this.cards.push(val);
+  onItemMove(element, x, y, r) {
+    var color = '';
+    var abs = Math.abs(x);
+    let min = Math.trunc(Math.min(16*16 - abs, 16*16));
+    let hexCode = this.decimalToHex(min, 2);
+    
+    if (x < 0) {
+      color = '#FF' + hexCode + hexCode;
+    } else {
+      color = '#' + hexCode + 'FF' + hexCode;
     }
-  })
-}
- 
-// http://stackoverflow.com/questions/57803/how-to-convert-decimal-to-hex-in-javascript
-decimalToHex(d, padding) {
-  var hex = Number(d).toString(16);
-  padding = typeof (padding) === "undefined" || padding === null ? padding = 2 : padding;
-  
-  while (hex.length < padding) {
-    hex = "0" + hex;
+    
+    element.style.background = color;
+    element.style['transform'] = `translate3d(0, 0, 0) translate(${x}px, ${y}px) rotate(${r}deg)`;
   }
   
-  return hex;
-}
+  // Connected through HTML
+  voteUp(like: boolean) {
+    let removedCard = this.cards.pop();
+    if (like) {
+      this.knowCards.push(removedCard);
+      this.recentCard = 'You know: ' + removedCard.name;
+    } else {
+      this.unknowCards.push(removedCard);
+      this.recentCard = 'You do not know : ' + removedCard.name;
+    }
+
+    if(this.cards.length == 0) {
+
+      let mTS = this.findMovieToSee(this.knowCards,this.unknowCards);
+
+      this.navCtrl.push(ResultPage, {
+        movieToSee: mTS
+      });
+    }
+  }
+
+  decimalToHex(d, padding) {
+    var hex = Number(d).toString(16);
+    padding = typeof (padding) === "undefined" || padding === null ? padding = 2 : padding;
+    
+    while (hex.length < padding) {
+      hex = "0" + hex;
+    }
+    
+    return hex;
+  }
+
+  findMovieToSee(peoplesK, peoplesU) {
+    let ret: number[];
+    let max = 0;
+    let min = 100;
+    let idMax = 0;
+    let idMin = 0;
+
+    let incFilm = [
+      {id: 1, count:0},
+      {id: 2, count:0},
+      {id: 3, count:0},
+      {id: 4, count:0},
+      {id: 5, count:0},
+      {id: 6, count:0},
+      {id: 7, count:0}
+    ]
+    peoplesK.forEach(people => {
+      people.films.forEach(idFilm => {
+        incFilm[idFilm-1].count ++;
+      });
+    });
+
+    peoplesU.forEach(people => {
+      people.films.forEach(idFilm => {
+        incFilm[idFilm-1].count --;
+      });
+    });
+
+    ret = incFilm.reduce(function(prev, curr) {
+      if(max < curr.count) {
+        max = curr.count;
+        idMax = curr.id;
+      }
+      if(min > curr.count) {
+        min = curr.count;
+        idMin = curr.id;
+      }
+      return [idMax,idMin];
+    }, [0,0]);
+
+    return ret;
+  }
+
+  ionViewWillEnter() {
+    this.ngAfterViewInit();
+    this.recentCard = '';
+  }
 
 }
