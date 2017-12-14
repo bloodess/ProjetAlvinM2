@@ -1,18 +1,41 @@
 page-home {
+  background: #000000;
+
     #card-stack {
-      width: 90%;
-      height: 200px;
-      background: #047915;
-      border: 10px solid #4cb338;
-      margin: 100px auto 0;
+      width: 100%;
+      height: 100%;
+      background: white;
+      margin: 0;
       position: relative;
     }
-   
+
     #card-stack ion-card {
-      border-radius: 5px;
+      background: #D7C07A;
       position: absolute;
       text-align: center;
-      top: 3%;
-      height: 90%;
+      height: 100%;
+    }
+
+    #card-stack ion-card ion-item{
+      text-align: center;
+      width: 100%;
+      display: inline-block;
+      background: #D7C07A;
+    }
+
+    #card-stack ion-card ion-item ion-avatar ion-row ion-col img{
+      display: inline-block;
+      height:100%;
+      border-radius: 0;
+      width: 100%;
+    }
+
+    #card-stack ion-row ion-col{
+      width: 100%;
+
+    }
+
+    ion-row{
+      height:100%;
     }
   }
