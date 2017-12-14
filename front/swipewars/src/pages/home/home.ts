@@ -72,11 +72,11 @@ onItemMove(element, x, y, r) {
   let min = Math.trunc(Math.min(16*16 - abs, 16*16));
   let hexCode = this.decimalToHex(min, 2);
 
-  if (x < 0) {
-    color = '#FF' + hexCode + hexCode;
-  } else {
-    color = '#' + hexCode + 'FF' + hexCode;
-  }
+  // if (x < 0) {
+  //   color = '#FF' + hexCode + hexCode;
+  // } else {
+  //   color = '#' + hexCode + 'FF' + hexCode;
+  // }
 
   element.style.background = color;
   element.style['transform'] = `translate3d(0, 0, 0) translate(${x}px, ${y}px) rotate(${r}deg)`;
