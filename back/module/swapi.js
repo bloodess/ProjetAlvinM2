@@ -10,7 +10,7 @@ var request = require('sync-request');
 exports.films = function(req, res){
     var id = [req.filmTop, req.filmBot];
 
-    fs.readFile("./module/data/dataFilmsswapi.json", function(err, datas){
+    fs.readFile("./module/data/dataFilmsswapi.json", function(err, data){
         //todo mettre les films dans le bon sens d'arriver
         res(JSON.parse(data).filter(function(req){
             return req.id == id[1] || req.id == id[0];
