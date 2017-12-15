@@ -45,8 +45,10 @@ export class HomePage {
   getPeoples() {
     //TODO add class data
     this.restProvider.getPeoples().then((data: any) => {
-      this.cards = data;
-      // console.log(data);
+      var stringData = JSON.stringify(data);
+      var parsedData = JSON.parse(stringData);
+      this.cards = parsedData;
+      console.log(parsedData[0].url_images[0]);
     });
   }
 
@@ -95,17 +97,6 @@ export class HomePage {
       this.navCtrl.push(ResultPage, {
         movieToSee: mTS
       });
-    }
-  }
-
-  public switchPhoto(next: boolean, imageSend: String){
-
-    if(next){
-      console.log("Next photo" );
-      console.log(imageSend);
-    }
-    else{
-       console.log("Photo précédente");
     }
   }
 
@@ -168,8 +159,11 @@ export class HomePage {
     this.recentCard = '';
   }
 
-  nextSlide() {
-    this.slides.slideTo(1, 500);
+  public nextSlide(index : number) {
+    console.log("Next slide");
+    console.log(this.slides.getActiveIndex());
+    console.log(index);
+    this.slides.slideNext();
   }
 
   prevSlide() {
