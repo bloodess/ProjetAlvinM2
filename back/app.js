@@ -26,6 +26,10 @@ app.options('/api/*', function (request, response, next) {
     response.send();
 });
 
+// todo mettre en place test
+// todo mettre en place logger
+
+
 //app.get('/images', googleapi.images);
 app.get('/peoples', gestion.peoples);
 app.post('/films', gestion.films);

@@ -5,6 +5,7 @@ var	swapi = require('./swapi');
 
 
 exports.peoples = function(req, res) {
+	//swapi.prepareDataToLocal();
 	swapi.getPeoplesData(function(data){
 		res.json(data);
 	});
