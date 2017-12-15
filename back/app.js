@@ -5,6 +5,7 @@ var express = require('express');
 var bodyParser  = require('body-parser');
 
 var	gestion = require('./module/gestion');
+var googleapi = require('./module/googleapi');
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -30,7 +31,7 @@ app.options('/api/*', function (request, response, next) {
 // todo mettre en place logger
 
 
-//app.get('/images', googleapi.images);
+app.get('/images', googleapi.images);
 app.get('/peoples', gestion.peoples);
 app.post('/films', gestion.films);
 
