@@ -10,12 +10,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class RestProvider {
 
-<<<<<<< HEAD
 	// apiUrl = 'http://127.0.0.1:3000';
 	apiUrl = 'https://swipew.herokuapp.com';
-=======
-  apiUrl = 'https://swipew.herokuapp.com';
->>>>>>> 765d898ca0ab9c6e186d71634d17922644726d41
 
   constructor(public http: HttpClient) {
     console.log('Hello RestProvider Provider');
