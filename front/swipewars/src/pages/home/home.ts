@@ -4,9 +4,6 @@ import 'rxjs/Rx';
 
 import {
   StackConfig,
-  Stack,
-  Card,
-  ThrowEvent,
   DragEvent,
   SwingStackComponent,
   SwingCardComponent} from 'angular2-swing';
@@ -71,10 +68,7 @@ export class HomePage {
   // Called whenever we drag an element
   onItemMove(element, x, y, r) {
     var color = '';
-    var abs = Math.abs(x);
-    let min = Math.trunc(Math.min(16*16 - abs, 16*16));
-    let hexCode = this.decimalToHex(min, 2);
-
+    
     element.style.background = color;
     element.style['transform'] = `translate3d(0, 0, 0) translate(${x}px, ${y}px) rotate(${r}deg)`;
   }

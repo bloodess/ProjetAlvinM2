@@ -1,6 +1,5 @@
 "use strict";
 
-
 var express = require('express');
 var bodyParser  = require('body-parser');
 
@@ -27,7 +26,6 @@ app.options('/api/*', function (request, response, next) {
 });
 
 // todo mettre en place test
-// todo mettre en place logger
 
 
 //app.get('/images', googleapi.images);

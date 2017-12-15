@@ -47,25 +47,25 @@ exports.getPeoplesData = function(res) {
             // ont tire un chiffre pour selectionner un people dans la liste
             var sel = Math.round(Math.random() * (nbpeoples - 0) + 0);
             var films = [];
-
-
-            if(data[sel] == undefined || !data[sel].hasOwnProperty('films')){
-                res({"erreur": "Probleme de récupération de vos héros."})
+            console.log(i);
+            console.log(data[sel]);
+            if(data[sel] !== undefined){
+                if(data[sel].hasOwnProperty('films')){
+                    for(var u = 0; u < data[sel].films.length; u++){
+                        var taillestring = data[sel].films[u].length;
+                        films.push(parseInt(data[sel].films[u].substring(taillestring-2, taillestring-1)));
+                    }
+                
+                    peoples.push({
+                        "name": data[sel].name,
+                        "gender": data[sel].gender,
+                        "height": data[sel].height,
+                        "mass": data[sel].mass,
+                        "url_images": data[sel].url_images,
+                        "films" : films
+                    });
+                }
             }
-
-            for(var u = 0; u < data[sel].films.length; u++){
-                var taillestring = data[sel].films[u].length;
-                films.push(parseInt(data[sel].films[u].substring(taillestring-2, taillestring-1)));
-            }
-        
-            peoples.push({
-                "name": data[sel].name,
-                "gender": data[sel].gender,
-                "height": data[sel].height,
-                "mass": data[sel].mass,
-                "url_images": data[sel].url_images,
-                "films" : films
-            });
         }
         if(peoples.length === 0) {
             res({"erreur":"Vous n'avez pas de héros disponible."})
