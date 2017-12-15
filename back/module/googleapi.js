@@ -26,7 +26,7 @@ exports.addImage = function(req, res){
     
     client.get(urlbyName, arg, function(data, response) {
       if(data !== undefined){
-        // todo
+        // todo test si la recup des data src fctnne
         var t = data.items[0].pagemap.cse_image[0].src;
       }
     }).on('error', function(error) {

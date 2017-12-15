@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Swipe Wars
     </ion-title>
   </ion-navbar>
 </ion-header>
@@ -15,7 +15,7 @@
         <ion-avatar item-left>
           <ion-row center>
 
-        <ion-col col-12 class="imageChar">
+        <ion-col col-sm-12 col-md-6 class="imageChar">
           <!-- <ion-slides> -->
             <!-- <div *ngFor="let img of c.url_images"> -->
               <!-- <ion-slide> -->
@@ -40,25 +40,29 @@
 
         </ion-row>
         </ion-avatar>
-        <h2>{{ c.name }} </h2>
+        <h1>{{ c.name }} </h1>
         <p>{{ c.gender }}</p>
+
+        <ion-row *ngIf="c.name">
+          <ion-col>
+            <button ion-button clear small icon-left color="primary" (click)="voteUp(false)">
+              <ion-icon name="thumbs-down"></ion-icon>
+              No
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button clear small icon-left color="primary" (click)="voteUp(true)">
+              <ion-icon name="thumbs-up"></ion-icon>
+              Yes
+            </button>
+          </ion-col>
+        </ion-row>
+
       </ion-item>
 
-      <ion-row *ngIf="c.name">
-        <ion-col>
-          <button ion-button clear small icon-left color="primary" (click)="voteUp(false)">
-            <ion-icon name="thumbs-down"></ion-icon>
-            No
-          </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button clear small icon-left color="primary" (click)="voteUp(true)">
-            <ion-icon name="thumbs-up"></ion-icon>
-            Yes
-          </button>
-        </ion-col>
-      </ion-row>
     </ion-card>
   </div>
-  <p style="text-align: center; width: 100%;">{{ recentCard }}</p>
+  <div class="divSwipeMsg">
+    <p class= "swipeMsg">{{ recentCard }}</p>
+  </div>
 </ion-content>

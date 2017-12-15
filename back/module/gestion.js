@@ -6,8 +6,6 @@ var	googleapi = require('./googleapi');
 
 
 exports.peoples = function(req, res) {
-	swapi.prepareDataToLocal();
-
 	swapi.getPeoplesData(function(data){
 		res.json(data);
 	});
@@ -24,6 +22,7 @@ exports.films = function(req, res){
 /**
  * Code de chargement des données en local fait une fois par jours
  */ 
+/*
 while(true){
 	// ont execute la fonction toutes les 10 sec
 	//setTimeout(function(){
@@ -50,7 +49,7 @@ while(true){
 
 
 
-		
+
 		var todaygoogleappi = new Date();
 		var dateAftersgoogleapi = new Date(JSON.parse(data).date_chargement_data_googleapi);
 		// ajout de 1 jours (le chargement ne se fait qu'une fois par jours)		
@@ -72,4 +71,4 @@ while(true){
 		}
 
 	//}, 2);
-}
+}*/
