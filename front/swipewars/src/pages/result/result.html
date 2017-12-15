@@ -18,11 +18,15 @@
     <ion-row *ngIf="filmMostKnow">
       <h2>{{filmMostKnow.title}}</h2>
       <img [src]="filmMostKnow.url_image">
+      <p>You know a lot of people from Star Wars : {{filmMostKnow.title}}. <br>
+        Want more details ? Click on the image ! </p>
     </ion-row>
 
     <ion-row *ngIf="filmMostUnknow">
         <h2>{{filmMostUnknow.title}}</h2>
         <img [src]="filmMostUnknow.url_image">
+        <p>Obviously Star Wars : {{filmMostUnknow.title}} have a lot of secrets for you ! <br>
+          Want more details ? Click on the image ! </p>
     </ion-row>
   </div>
 </ion-content>
