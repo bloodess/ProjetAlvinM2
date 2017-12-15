@@ -26,4 +26,18 @@ export class RestProvider {
 	  });
 	}
 
+	getMovies(idFilms) {
+		let arg = { "filmTop" : idFilms[0], "filmBot" : idFilms[1]};
+		let url = this.apiUrl+'/films/';
+
+	  return new Promise(resolve => {
+	    this.http.post(url,arg).subscribe(data => {
+				// console.log(data);
+	      resolve(data);
+	    }, err => {
+	      console.log(err);
+	    });
+	  });
+	}
+
 }

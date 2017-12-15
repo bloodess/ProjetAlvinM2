@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Slides } from 'ionic-angular';
 import 'rxjs/Rx';
 
 import {
@@ -45,15 +45,14 @@ export class HomePage {
   getPeoples() {
     //TODO add class data
     this.restProvider.getPeoples().then((data: any) => {
-      var stringData = JSON.stringify(data);
-      var parsedData = JSON.parse(stringData);
-      this.cards = parsedData;
-      console.log("Cards " + parsedData[0].url_images[0]);
+      this.cards = data;
+      // console.log(data);
     });
   }
 
   @ViewChild('myswing1') swingStack: SwingStackComponent;
   @ViewChildren('mycards1') swingCards: QueryList<SwingCardComponent>;
+  @ViewChild(Slides) slides: Slides;
 
   ngAfterViewInit() {
     // Either subscribe in controller or set in HTML
@@ -167,6 +166,14 @@ export class HomePage {
   ionViewWillEnter() {
     this.ngAfterViewInit();
     this.recentCard = '';
+  }
+
+  nextSlide() {
+    this.slides.slideTo(1, 500);
+  }
+
+  prevSlide() {
+    this.slides.slideTo(0, 500);
   }
 
 }
