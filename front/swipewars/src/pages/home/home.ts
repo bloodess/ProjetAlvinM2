@@ -45,7 +45,7 @@ export class HomePage {
   getPeoples() {
     //TODO add class data
     this.restProvider.getPeoples().then((data: any) => {
-      this.cards = data.peoples;
+      this.cards = data;
     });
   }
 
