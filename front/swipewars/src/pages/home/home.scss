@@ -15,7 +15,7 @@ page-home {
       text-align: center;
       height: 95%;
     }
-    
+
     #card-stack ion-card ion-item{
       text-align: center;
       width: 95%;
@@ -47,13 +47,21 @@ page-home {
       padding-top: 80px;
     }
 
-    .imageChar{
-      
+    @media screen and (max-width: 400px) {
+      .imageChar img{
+        max-width: 100%;
     }
+  }
+
+  @media screen and (min-width: 401px) {
+    .imageChar img{
+      max-width: 40%;
+  }
+}
 
     .swipeMsg {
-      text-align: center; 
-      width: 100%; 
+      text-align: center;
+      width: 100%;
       color: yellow;
     }
 
