@@ -53,11 +53,23 @@ page-home {
     }
   }
 
-  @media screen and (min-width: 401px) {
+  @media screen and (min-width: 420px) {
+    .imageChar img{
+      max-width: 60%;
+    }
+  }
+
+  @media screen and (min-width: 650px) {
+    .imageChar img{
+      max-width: 50%;
+    }
+  }
+
+  @media screen and (min-width: 850px) {
     .imageChar img{
       max-width: 40%;
+    }
   }
-}
 
     .swipeMsg {
       text-align: center;
