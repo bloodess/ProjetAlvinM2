@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { RestProvider } from '../../providers/rest/rest';
 
 /**
  * Generated class for the ResultPage page.
@@ -15,12 +16,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ResultPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  filmMostKnow;
+  filmMostUnknow;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public restProvider: RestProvider) {
     console.log(this.navParams.get('movieToSee'));
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ResultPage');
+    this.filmMostKnow = {};
+    this.filmMostUnknow = {};
+    this.getMovies();
+  }
+
+  getMovies() {
+    //TODO add class data
+    this.restProvider.getMovies(this.navParams.get('movieToSee')).then((data: any) => {
+      this.filmMostKnow = data[0];
+      this.filmMostUnknow = data[1];
+      console.log(data);
+    });
   }
 
 }

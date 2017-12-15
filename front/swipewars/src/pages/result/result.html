@@ -7,12 +7,22 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>result</ion-title>
+    <ion-title>Film you need to see</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
+  <div id="movieList">
+    <ion-row *ngIf="filmMostKnow">
+      <h2>{{filmMostKnow.title}}</h2>
+      <img [src]="filmMostKnow.url_image">
+    </ion-row>
 
+    <ion-row *ngIf="filmMostUnknow">
+        <h2>{{filmMostUnknow.title}}</h2>
+        <img [src]="filmMostUnknow.url_image">
+    </ion-row>
+  </div>
 </ion-content>
