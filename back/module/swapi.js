@@ -5,6 +5,8 @@ var fs = require('fs');
 var Client = require('node-rest-client').Client;
 var client = new Client();
 
+var logger = require("./logger");
+
 /**
  * 
  * @param {*} req.filmTOP id du film du haut de la page resultat
@@ -12,8 +14,8 @@ var client = new Client();
  * @param {*} res retourne deux films liée au id passer en paramètre
  */
 exports.films = function(req, res){
-    
     if(req.hasOwnProperty('filmTop') == false || req.hasOwnProperty('filmBot') == false){
+        logger.wlog({type: "ERROR", message: "function film, Le format des données recu par le serveur ne sont pas valide."});
         res({"erreur": "Le format des données recu par le serveur ne sont pas valide."})
     }
     var id = [req.filmTop, req.filmBot];
@@ -47,7 +49,7 @@ exports.getPeoplesData = function(res) {
             var films = [];
 
 
-            if(data[sel] === undefined || !data[sel].hasOwnProperty('films')){
+            if(data[sel] == undefined || !data[sel].hasOwnProperty('films')){
                 res({"erreur": "Probleme de récupération de vos héros."})
             }
 
@@ -77,10 +79,11 @@ exports.getPeoplesData = function(res) {
  * Cette fonction charge les données de l'api swapi en local.
  */
 exports.prepareDataToLocal = function(){
+    logger.wlog({type: "INFOS", message: "Prepare data local."});
     this.getAllPeopleSwapi(function(data){
         fs.writeFile("./module/data/dataPeopleswapi.json", JSON.stringify(data), function(err) {
             if(err) {
-                console.log(err);
+                logger.wlog({type: "ERROR", message: "prepare data peoples : " + err});
             }
         }); 
     });
@@ -88,7 +91,7 @@ exports.prepareDataToLocal = function(){
     this.getAllFilmsSwapi(function(data){
         fs.writeFile("./module/data/dataFilmsswapi.json", JSON.stringify(data), function(err) {
             if(err) {
-                console.log(err);
+                logger.wlog({type: "ERROR", message: "prepare data films : " + err});
             }
         }); 
     });
@@ -145,7 +148,7 @@ exports.getAllPeopleSwapi = function(res){
                     "height": data.results[e].height,
                     "mass": data.results[e].mass,
                     "url_images": [
-                        "https://images-na.ssl-images-amazon.com/images/I/51H4KT8A0FL._SY445_.jpg",
+                        "https://vignette.wikia.nocookie.net/fr.starwars/images/5/5f/Yoda.png/revision/latest/scale-to-width-down/350?cb=20161009183018",
                         "http://i.f1g.fr/media/figaro/680x382_crop/2016/12/12/XVM2e138336-c06b-11e6-b6a7-75b5a9a24abf.jpg"
                     ],
                     "films": data.results[e].films
@@ -174,6 +177,7 @@ exports.requestswapi = function(req, res){
         }
         res(data);
     }).on('error', function(error) {
+        logger.wlog({type: "ERROR", message: "Problème appelle swapi."});
         res(false);
     });
 }
