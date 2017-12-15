@@ -47,8 +47,6 @@ exports.getPeoplesData = function(res) {
             // ont tire un chiffre pour selectionner un people dans la liste
             var sel = Math.round(Math.random() * (nbpeoples - 0) + 0);
             var films = [];
-            console.log(i);
-            console.log(data[sel]);
             if(data[sel] !== undefined){
                 if(data[sel].hasOwnProperty('films')){
                     for(var u = 0; u < data[sel].films.length; u++){
