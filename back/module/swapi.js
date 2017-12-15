@@ -61,7 +61,7 @@ exports.getPeoplesData = function(res) {
                 "gender": data[sel].gender,
                 "height": data[sel].height,
                 "mass": data[sel].mass,
-                "url_image": data[sel].url_images,
+                "url_images": data[sel].url_images,
                 "films" : films
             });
         }
@@ -144,10 +144,10 @@ exports.getAllPeopleSwapi = function(res){
                     "gender": data.results[e].gender,
                     "height": data.results[e].height,
                     "mass": data.results[e].mass,
-                    "url_images": [{
-                        "url1":"https://images-na.ssl-images-amazon.com/images/I/51H4KT8A0FL._SY445_.jpg",
-                        "url2":"http://i.f1g.fr/media/figaro/680x382_crop/2016/12/12/XVM2e138336-c06b-11e6-b6a7-75b5a9a24abf.jpg"
-                    }],
+                    "url_images": [
+                        "https://images-na.ssl-images-amazon.com/images/I/51H4KT8A0FL._SY445_.jpg",
+                        "http://i.f1g.fr/media/figaro/680x382_crop/2016/12/12/XVM2e138336-c06b-11e6-b6a7-75b5a9a24abf.jpg"
+                    ],
                     "films": data.results[e].films
                 });
             }
