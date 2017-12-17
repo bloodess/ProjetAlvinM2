@@ -93,7 +93,6 @@ exports.prepareDataToLocal = function(){
             }
         }); 
     });
-
 }
 
 /**

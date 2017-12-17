@@ -27,10 +27,13 @@ app.options('/api/*', function (request, response, next) {
 });
 
 // todo mettre en place test
-
+// todo geler les dependance packages .json
+// faire un tag sur git
 
 app.get('/peoples', gestion.peoples);
 app.post('/films', gestion.films);
+app.post('/dataToLocal', gestion.dataToLocal);
+app.post('/imgToLocal', gestion.imgToLocal);
 
 app.listen(port);
 console.log('SERVICE - Listening on port ' + port + '...');

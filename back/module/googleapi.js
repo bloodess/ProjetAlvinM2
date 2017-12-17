@@ -1,7 +1,7 @@
 'use strict';
-
+/*
 const fs = require('fs');
-const http = require('http')
+const http = require('http')*/
 var Client = require('node-rest-client').Client;
 var client = new Client();
 var searchType = 'image';
@@ -21,7 +21,21 @@ exports.addImage = function(req, res){
       "Content-Type": "application/json"
     }
   };
-  array.forEach(element => {
+  var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&q='+array[0].name; // mettre le nom du personnage après le &q=
+  console.log(urlbyName);
+  client.get(urlbyName, arg, function(data, response) {
+    if(data !== undefined){
+      console.log(data);
+      // todo test si la recup des data src fctnne
+      var t = data.items[0].pagemap.cse_image[0].src;
+      res(true);
+    }
+  }).on('error', function(error) {
+      logger.wlog({type: "ERROR", message: "Problème appelle google api."});
+      res(false);
+  });
+
+  /*array.forEach(element => {
     var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&q='+element.name; // mettre le nom du personnage après le &q=
     
     client.get(urlbyName, arg, function(data, response) {
@@ -33,7 +47,7 @@ exports.addImage = function(req, res){
         logger.wlog({type: "ERROR", message: "Problème appelle google api."});
         res(false);
     });
-  });
+  });*/
 
   
  
