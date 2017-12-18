@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { RestProvider } from '../../providers/rest/rest';
 
+import { ContactPage } from '../contact/contact';
+
 /**
  * Generated class for the ResultPage page.
  *
@@ -18,6 +20,7 @@ export class ResultPage {
 
   filmMostKnow;
   filmMostUnknow;
+  contactPage:any = ContactPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public restProvider: RestProvider) {
     console.log(this.navParams.get('movieToSee'));
@@ -35,6 +38,13 @@ export class ResultPage {
       this.filmMostKnow = data[0];
       this.filmMostUnknow = data[1];
       console.log(data);
+    });
+  }
+
+  toContactPage(m) {
+    
+    this.navCtrl.push(ContactPage, {
+      movie: m
     });
   }
 
