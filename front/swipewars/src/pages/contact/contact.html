@@ -18,11 +18,9 @@
     <ion-row *ngIf="film">
       <img [src]="film.url_image">
       <h2>{{film.title}}</h2>
-      <!-- <h3>{{film.release_date}}</h3> -->
-      <!-- <p>Opening crawl</p> -->
+      <h3>{{film.release_date}}</h3>
+      <p>{{film.opening_crawl}}</p>
       <!-- TODO fix memory problem cause by will-change -->
     </ion-row>
   </div>
-</ion-content><ion-content padding>
-
 </ion-content>
