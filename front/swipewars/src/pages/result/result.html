@@ -15,18 +15,26 @@
 
 <ion-content padding>
   <div id="movieList">
-    <ion-row *ngIf="filmMostKnow">
-      <h2>{{filmMostKnow.title}}</h2>
-      <img [src]="filmMostKnow.url_image" (click)="toContactPage(filmMostKnow)">
-      <p>You know a lot of people from Star Wars : {{filmMostKnow.title}}. <br>
-        Want more details ? Click on the image ! </p>
+    <ion-row *ngIf="filmMostKnow" id="filmKnow">
+      <ion-col>
+        <img [src]="filmMostKnow.url_image" (click)="toContactPage(filmMostKnow)">
+      </ion-col>
+      <ion-col>
+          <h2>{{filmMostKnow.title}}</h2>
+          <p>You know a lot of people from Star Wars : {{filmMostKnow.title}}. <br>
+            Want more details ? Click on the picture ! </p>
+      </ion-col>
     </ion-row>
 
-    <ion-row *ngIf="filmMostUnknow">
+    <ion-row *ngIf="filmMostUnknow" id="filmUnknow">
+      <ion-col>
         <h2>{{filmMostUnknow.title}}</h2>
-        <img [src]="filmMostUnknow.url_image" (click)="toContactPage(filmMostUnknow)">
         <p>Obviously Star Wars : {{filmMostUnknow.title}} have a lot of secrets for you ! <br>
-          Want more details ? Click on the image ! </p>
+          Want more details ? Click on the picture ! </p>
+      </ion-col>
+      <ion-col>
+        <img [src]="filmMostUnknow.url_image" (click)="toContactPage(filmMostUnknow)">
+      </ion-col>
     </ion-row>
   </div>
 </ion-content>

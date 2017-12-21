@@ -1,88 +1,30 @@
 page-home {
   background: #000000;
 
-    #card-stack {
-      width: 100%;
-      height: 95%;
-      // background: white;
-      margin: 0;
-      position: relative;
-    }
-
-    #card-stack ion-card {
-      // background: #D7C07A;
-      position: absolute;
-      text-align: center;
-      height: 95%;
-    }
-
-    #card-stack ion-card ion-item{
-      text-align: center;
-      width: 95%;
-      display: inline-block;
-      // background: #D7C07A;
-    }
-
-    #card-stack ion-card ion-item ion-avatar ion-row ion-col img{
-      display: inline-block;
-      height:95%;
-      border-radius: 0;
-      width: 100%;
-    }
-
-    #card-stack ion-row ion-col{
-      width: 100%;
-    }
-
-    .card-md {
-      border-radius: 20px !important;
-    }
-
-    ion-row{
-      height:100%;
-    }
-
-    .buttonSwitch{
-      height:100%;
-      padding-top: 80px;
-    }
-
-    @media screen and (max-width: 400px) {
-      .imageChar img{
-        max-width: 100%;
-    }
-  }
-
-  @media screen and (min-width: 420px) {
-    .imageChar img{
-      max-width: 60%;
-    }
-  }
-
-  @media screen and (min-width: 650px) {
-    .imageChar img{
-      max-width: 50%;
-    }
-  }
-
-  @media screen and (min-width: 850px) {
-    .imageChar img{
-      max-width: 40%;
-    }
-  }
-
-    .swipeMsg {
-      text-align: center;
-      width: 100%;
-      color: yellow;
-    }
-
-    .divSwipeMsg {
-      height: 5%;
-    }
-
     .fixed-content {
       background-image: url(http://www.open2d.com/data/uploads/2015/02/4.jpg);
     }
 
+    #homeDiv {
+      color: yellow;
+      text-align: center;
+    }
+
+    #beginRow {
+      padding-top: 15%;
+    }
+}
+
+@font-face {
+  font-family: 'Starjedi';
+  src: url('../../assets/fonts/Starjedi.eot');
+  src: url('../../assets/fonts/Starjedi.eot') format('embedded-opentype'),
+        url('../../assets/fonts/Starjedi.woff2') format('woff2'),
+        url('../../assets/fonts/Starjedi.woff') format('woff'),
+        url('../../assets/fonts/Starjedi.ttf') format('truetype'),
+        url('../../assets/fonts/Starjedi.svg#Starjedi') format('svg');
+  }
+
+  ion-title, h1, h2, h3, h4, h5, h6 {
+    font-family: "Starjedi", serif;
   }
