@@ -7,7 +7,7 @@ var client = new Client();
 var logger = require("./logger");
 
 var searchType = 'image';
-var key = 'AIzaSyA6cmRhHLOU0sTkSuugvlhbMrdXx7XrIKE' // Key de l'api
+var key = 'AIzaSyAMKijp5HMBHJWNJxpqeMQpJcyIKcuAKL8' // Key de l'api
 
 var cx = '013773035180240197132:wb9fxn31moc'; // "adresse" du moteur de recherche
 
@@ -31,16 +31,15 @@ exports.addImage = function(req, res){
   };
   
   array.forEach(element => {
-    var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&searchType='+searchType+'&q='+element.name+' star wars'; // mettre le nom du personnage après le &q=
-    console.log('URL : '+urlbyName);
-    
+    var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&searchType='+searchType+'&q='+element.name+' star wars';
+    console.log(urlbyName);
     client.get(urlbyName, arg, function(data, response) {
-      console.log('DATA : '+ data);
-
+      console.log(data);
       nbarray = nbarray + 1;
-      if(data !== undefined){
+      if(data.items !== undefined){
+      if(data.items[0] !== undefined){
         var urlimg = data.items[0].link;
-        peoplesWithImage.push({
+         peoplesWithImage.push({
           "name": element.name,
           "gender": element.gender,
           "height": element.height,
@@ -54,7 +53,7 @@ exports.addImage = function(req, res){
           fs.writeFileSync("./module/data/dataPeopleswapi.json", JSON.stringify(peoplesWithImage), 'utf8');
         }
 
-      }
+      }}
     }).on('error', function(error) {
         logger.wlog({type: "ERROR", message: "Problème google api."+ error});
     });
