@@ -28,4 +28,8 @@ export class ContactPage {
     this.navCtrl.popToRoot();
   }
 
+  toContactForm() {
+    window.open("https://docs.google.com/forms/d/1ibU4d43jrp1wbyM6VOD05oV9dL_dKunTJgQ5iMDkDZk/viewform?edit_requested=true", "_blank");
+  }
+
 }
