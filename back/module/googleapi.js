@@ -51,7 +51,7 @@ exports.addImageFilm = function(req, res){
   var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&searchType='+searchType+'&q='+arrayFilm[0].name;
   console.log(urlbyName);
 
-  array.forEach(element => {
+  arrayFilm.forEach(element => {
     var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&q='+element.name;
     
     client.get(urlbyName, arg, function(data, response) {
