@@ -47,28 +47,46 @@ page-cards {
         padding-top: 80px;
       }
   
-      @media screen and (max-width: 400px) {
-        .imageChar img{
+      .cardsperso{
+        background-image:url("http://traceeellisross.com/wp-content/uploads/2012/12/Black-Texture-wallpaper.jpeg");
+        background-size: cover;
+      }
+
+
+      @media screen and (max-width: 649px) {
+        .imageChar{
           max-width: 100%;
       }
     }
-  
-    @media screen and (min-width: 420px) {
-      .imageChar img{
-        max-width: 60%;
-      }
+
+
+    .item-md{
+      background-color: transparent;
+    }
+
+    #cardName{
+      color: #ffd700 !important;
+    }
+    #textName{
+      color: #ffd700 !important;
+    }
+    .buttonperso{
+      color: #ffd700 !important;
     }
   
     @media screen and (min-width: 650px) {
       .imageChar img{
-        max-width: 50%;
+        max-width: 100%;
+      }
+      .imageChar{
+        margin-top: 20%;
+        margin-bottom: 20%
       }
     }
   
-    @media screen and (min-width: 850px) {
-      .imageChar img{
-        max-width: 40%;
-      }
+    .imageChar{
+      margin-left: auto;
+      margin-right: auto;
     }
   
       .swipeMsg {
@@ -91,4 +109,4 @@ page-cards {
         font-family: "Starjedi", serif;
       }
   
-    }
+}
