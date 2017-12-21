@@ -32,7 +32,11 @@
         },
         {
             "name": "Rey",
+<<<<<<< HEAD
+            "gender": "X",
+=======
             "gender": "Female",
+>>>>>>> 47bf2f5c3e6fd226a13c779be37a55b6787345d2
             "species": "Humain",
             "planete_orgin": "",
             "height":"",

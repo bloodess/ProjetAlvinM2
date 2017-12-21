@@ -9,8 +9,8 @@
     "body-parser": "1.18.2"
   },
   "author": "SW Corp.",
-  "license": "SW Corp.", 
-  "scripts": { 
-	"start" : "node app.js"
+  "license": "SW Corp.",
+  "scripts": {
+    "start": "node app.js"
   }
 }

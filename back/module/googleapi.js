@@ -11,7 +11,7 @@ var key = 'AIzaSyDEl6V6ntchSvqJZSYztzBKqgMlHmzIOs0' // Key de l'api
 
 var cx = '013773035180240197132:lrkfkz_oul0';
 
-var url = 'http://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&q=Luke'; // mettre le nom du personnage après le &q=
+var url = 'http://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&searchType='+searchType+'&q=Luke'; // mettre le nom du personnage après le &q=
 
 
 
@@ -23,7 +23,7 @@ exports.addImage = function(req, res){
       "Content-Type": "application/json"
     }
   };
-  var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&q='+array[0].name; // mettre le nom du personnage après le &q=
+  var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&searchType='+searchType+'&q='+array[0].name; // mettre le nom du personnage après le &q=
   console.log(urlbyName);
 
   client.get(urlbyName, arg, function(data, response) {
