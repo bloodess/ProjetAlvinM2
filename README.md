@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="http://www.amitmerchant.com/electron-markdownify"><img src="https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/img/markdownify.png" alt="SwipeWars" width="200"></a>
+  <img src="./ressources/logo_starwars.png" alt="SwipeWars" width="200"></a>
   <br>
   SwipeWars
   <br>
@@ -40,23 +40,10 @@
 
 ## Key Features
 
-* LivePreview - Make changes, See changes
-  - Instantly see what your Markdown documents look like in HTML as you create them.
-* Sync Scrolling
-  - While you type, LivePreview will automatically scroll to the current location you're editing.
-* GitHub Flavored Markdown  
-* Syntax highlighting
-* [KaTeX](https://khan.github.io/KaTeX/) Support
-* Dark/Light mode
-* Toolbar for basic Markdown formatting
-* Supports multiple cursors
-* Save the Markdown preview as PDF
-* Emoji support in preview :tada:
-* App will keep alive in tray for quick usage
-* Full screen mode
-  - Write distraction free.
-* Cross platform
-  - Windows, Mac and Linux ready.
+* Swipe Caracters -
+  - If you know a caracter, then swipe to the right.
+  - And if you didn't know him, then swipe to the left.
+* After some swiping, you will be offered two films, which correspond to your answers  
 
 ## How To Use
 
