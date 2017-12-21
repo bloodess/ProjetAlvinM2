@@ -8,12 +8,21 @@ page-contact {
     text-align: center;
   }
 
-  #movie {
+  #movie h1, h2, h3, h4{
     color: #FFD700;
   }
 
+  #movie p{
+    color: #ffffff;
+  }
+
   #contact {
+    color: #ffffff;
+  }
+
+  #actionBloc button {
     color: #FFD700;
+    border-color: #FFD700;
   }
 }
 
