@@ -35,6 +35,7 @@ exports.addImage = function(req, res){
 
     client.get(urlbyName, arg, function(data, response) {
       console.log('DATA : '+ data);
+      
       nbarray = nbarray + 1;
       if(data !== undefined){
         var urlimg = data.items[0].link;
