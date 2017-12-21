@@ -11,11 +11,11 @@ page-result {
   
   #filmKnow {
     padding-bottom: 15%;
-    color: #FFD700;
+    color: color($colors, swPrim, base);
   }
   
   #filmUnknow {
-    color: #FFD700;
+    color: color($colors, swPrim, base);
   
   }
 

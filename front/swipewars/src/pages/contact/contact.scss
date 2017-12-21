@@ -9,20 +9,20 @@ page-contact {
   }
 
   #movie h1, h2, h3, h4{
-    color: #FFD700;
+    color: color($colors, swPrim, base);
   }
 
   #movie p{
-    color: #ffffff;
+    color: color($colors, swSec, base);
   }
 
   #contact {
-    color: #ffffff;
+    color: color($colors, swSec, base);
   }
 
   #actionBloc button {
-    color: #FFD700;
-    border-color: #FFD700;
+    color: color($colors, swPrim, base);
+    border-color: color($colors, swPrim, base);
   }
 }
 

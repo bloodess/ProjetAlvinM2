@@ -68,13 +68,13 @@ page-cards {
     }
 
     #cardName{
-      color: #ffd700 !important;
+      color: color($colors, swPrim, base) !important;
     }
     #textName{
-      color: #ffd700 !important;
+      color: color($colors, swPrim, base) !important;
     }
     .buttonperso{
-      color: #ffd700 !important;
+      color: color($colors, swPrim, base) !important;
     }
   
     @media screen and (min-width: 650px) {
@@ -95,7 +95,7 @@ page-cards {
       .swipeMsg {
         text-align: center;
         width: 100%;
-        color: yellow;
+        color: color($colors, swPrim, base);
       }
   
       .divSwipeMsg {
