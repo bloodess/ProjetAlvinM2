@@ -1,12 +1,11 @@
 page-home {
-  background: #000000;
 
     .fixed-content {
       background-image: url(http://www.open2d.com/data/uploads/2015/02/4.jpg);
     }
 
     #homeDiv {
-      color: #FFD700;
+      color: color($colors, swPrim, base);
       text-align: center;
     }
 
