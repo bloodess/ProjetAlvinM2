@@ -23,7 +23,6 @@ export class ResultPage {
   contactPage:any = ContactPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public restProvider: RestProvider) {
-    console.log(this.navParams.get('movieToSee'));
   }
 
   ionViewDidLoad() {
@@ -37,7 +36,6 @@ export class ResultPage {
     this.restProvider.getMovies(this.navParams.get('movieToSee')).then((data: any) => {
       this.filmMostKnow = data[0];
       this.filmMostUnknow = data[1];
-      console.log(data);
     });
   }
 

@@ -52,7 +52,6 @@ export class CardsPage {
       var stringData = JSON.stringify(data);
       var parsedData = JSON.parse(stringData);
       this.cards = parsedData;
-      console.log(parsedData[0].url_images[0]);
     });
   }
 
@@ -165,9 +164,6 @@ export class CardsPage {
   }
 
   public nextSlide(index : number) {
-    console.log("Next slide");
-    console.log(this.slides.getActiveIndex());
-    console.log(index);
     this.slides.slideNext();
   }
 
