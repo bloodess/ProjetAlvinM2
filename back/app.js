@@ -38,6 +38,7 @@ app.post('/films', gestion.films);
 
 app.post('/dataToLocal', gestion.dataToLocal);
 app.post('/imgToLocal', gestion.imgToLocal);
+app.post('/imgFilmToLocal', gestion.imgFilmToLocal);
 
 
 

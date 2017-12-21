@@ -69,6 +69,7 @@ function writeAndCall(today, url){
 	});
 }
 
+
 app.listen(port);
 console.log('SERVICE - Listening on port ' + port + '...');
 

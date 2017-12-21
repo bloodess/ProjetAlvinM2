@@ -145,8 +145,7 @@ exports.getAllPeopleSwapi = function(res){
                     "height": data.results[e].height,
                     "mass": data.results[e].mass,
                     "url_images": [
-                        "https://vignette.wikia.nocookie.net/fr.starwars/images/5/5f/Yoda.png/revision/latest/scale-to-width-down/350?cb=20161009183018",
-                        "http://i.f1g.fr/media/figaro/680x382_crop/2016/12/12/XVM2e138336-c06b-11e6-b6a7-75b5a9a24abf.jpg"
+                        "https://vignette.wikia.nocookie.net/fr.starwars/images/5/5f/Yoda.png/revision/latest/scale-to-width-down/350?cb=20161009183018"
                     ],
                     "films": data.results[e].films
                 });

@@ -27,10 +27,20 @@ exports.dataToLocal = function(req, res){
 	}
 }
 
+exports.imgFilmToLocal = function(req, res){
+	if(req.body.key = "key123!"){
+		fs.readFile("./module/data/dataFilmsswapi.json", function(err, data){
+			googleapi.addImageFilm(JSON.parse(data), function(retour){
+				res.json(retour);
+			});	
+		});
+	}
+}
+
 exports.imgToLocal = function(req, res){
 	if(req.body.key == "key123!"){
-		swapi.getPeoplesData(function(data){
-			res.json(googleapi.addImage(data));
+		fs.readFile("./module/data/dataPeopleswapi.json", function(err, data){
+			res.json(googleapi.addImage(JSON.parse(data)));
 		});
 	}
 }
