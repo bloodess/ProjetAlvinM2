@@ -1,13 +1,14 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Swipe Wars
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+
 
 <ion-content padding>
-  <div id="homeDiv">
+  <div id="homeDiv" (click)="toCardsPage()">
+    
+    <ion-row id="beginRow">
+      <div text-center>
+        <img src="../../assets/imgs/logo.png">
+      </div>
+    </ion-row>
+      
     <ion-col>
       <ion-row>
         <h2>
@@ -23,10 +24,7 @@
           may the force be with you!
         </h2>
       </ion-row>
-      <ion-row id="beginRow">
-        <img src="../../assets/imgs/logo_starwars.png">
-        <button ion-button block (click)="toCardsPage()">Begin</button>
-      </ion-row>
     </ion-col>
+    
   </div>
 </ion-content>
