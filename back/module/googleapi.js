@@ -7,7 +7,7 @@ var client = new Client();
 var logger = require("./logger");
 
 var searchType = 'image';
-var key = 'AIzaSyA6cmRhHLOU0sTkSuugvlhbMrdXx7XrIKE' // Key de l'api
+var key = 'AIzaSyAVMY-xZOkJiQOSPfc-ECfTbUH4lUKGb14' // Key de l'api
 
 var cx = '013773035180240197132:wb9fxn31moc'; // "adresse" du moteur de recherche
 
@@ -31,15 +31,16 @@ exports.addImage = function(req, res){
   };
   
   array.forEach(element => {
-    var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&searchType='+searchType+'&q='+element.name+' star wars'; // mettre le nom du personnage après le &q=
-    console.log('URL : '+urlbyName);
-    
+    var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&searchType='+searchType+'&q='+element.name+' star wars';
+    //console.log('LE BATARD CES : '+ element.name);
     client.get(urlbyName, arg, function(data, response) {
-      console.log('DATA : '+ data);
+      //console.log('DATA : '+ data);
 
       nbarray = nbarray + 1;
-      if(data !== undefined){
+
+      if(data.items[0] !== undefined){
         var urlimg = data.items[0].link;
+        //console.log('URL IMAGE : '+urlimg);
         peoplesWithImage.push({
           "name": element.name,
           "gender": element.gender,
