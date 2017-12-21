@@ -16,11 +16,32 @@
 <ion-content padding>
   <div id="movie">
     <ion-row *ngIf="film">
-      <img [src]="film.url_image">
-      <h2>{{film.title}}</h2>
-      <h3>{{film.release_date}}</h3>
+      <ion-col>
+        <img [src]="film.url_image">
+      </ion-col>
+      <ion-col>
+        <h2>{{film.title}}</h2>
+        <h4>{{film.release_date}}</h4>
+      </ion-col>
       <p>{{film.opening_crawl}}</p>
-      <!-- TODO fix memory problem cause by will-change -->
+    </ion-row>
+  </div>
+  <div id="contact">
+    <ion-row>
+      <p>
+        If you want more information about the universe of Star Wars 
+        and join a passionate community, click on the link below and join the force!
+      </p>
+    </ion-row>
+  </div>
+  <div id="actionBloc">
+    <ion-row>
+      <ion-col>
+        <button ion-button (click)="toHomePage()">Restart</button>
+      </ion-col>
+      <ion-col>
+        <button ion-button>Join us</button>
+      </ion-col>
     </ion-row>
   </div>
 </ion-content>
