@@ -31,7 +31,7 @@ exports.addImage = function(req, res){
   };
   
   array.forEach(element => {
-    var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&searchType='+searchType+'&q='+element.name; // mettre le nom du personnage après le &q=
+    var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&searchType='+searchType+'&q='+element.name+' star wars'; // mettre le nom du personnage après le &q=
 
     client.get(urlbyName, arg, function(data, response) {
       nbarray = nbarray + 1;
