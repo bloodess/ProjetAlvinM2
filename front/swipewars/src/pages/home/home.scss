@@ -6,13 +6,19 @@ page-home {
     }
 
     #homeDiv {
-      color: yellow;
+      color: #FFD700;
       text-align: center;
     }
 
     #beginRow {
-      padding-top: 15%;
+      padding-top: 5%;
+      padding-bottom: 5%;
     }
+
+    #beginRow img {
+      max-width: 40%;
+    }
+      
 }
 
 @font-face {
