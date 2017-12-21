@@ -9,7 +9,7 @@ var safe = 'off';
 var key = 'AIzaSyDEl6V6ntchSvqJZSYztzBKqgMlHmzIOs0' // Key de l'api
 //var cx = '013773035180240197132:wb9fxn31moc'; // "adresse" du moteur de recherche
 
-var cx = '010200782044674069248:3l_cxdk7hlu';
+var cx = '013773035180240197132:lrkfkz_oul0';
 
 var url = 'http://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&q=Luke'; // mettre le nom du personnage après le &q=
 
@@ -53,9 +53,6 @@ exports.addImage = function(req, res){
         res(false);
     });
   });*/
-
-  
- 
 }
 
 

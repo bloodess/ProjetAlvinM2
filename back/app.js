@@ -4,7 +4,6 @@ var express = require('express');
 var bodyParser  = require('body-parser');
 
 var	gestion = require('./module/gestion');
-var googleapi = require('./module/googleapi');
 
 var app = express();
 var port = process.env.PORT || 3000;
@@ -32,8 +31,16 @@ app.options('/api/*', function (request, response, next) {
 
 app.get('/peoples', gestion.peoples);
 app.post('/films', gestion.films);
+
+
+
+
 app.post('/dataToLocal', gestion.dataToLocal);
 app.post('/imgToLocal', gestion.imgToLocal);
+
+
+
+
 
 app.listen(port);
 console.log('SERVICE - Listening on port ' + port + '...');
