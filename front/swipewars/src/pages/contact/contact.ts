@@ -24,4 +24,8 @@ export class ContactPage {
     this.film = this.navParams.get('movie');
   }
 
+  toHomePage() {
+    this.navCtrl.popToRoot();
+  }
+
 }

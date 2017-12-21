@@ -16,6 +16,7 @@ import { HttpModule } from '@angular/http';
 import { SwingModule } from 'angular2-swing';
 import { ResultPage } from '../pages/result/result';
 import { ContactPage } from '../pages/contact/contact';
+import { CardsPage } from '../pages/cards/cards';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { ContactPage } from '../pages/contact/contact';
     MyApp,
     HomePage,
     ResultPage,
-    ContactPage
+    ContactPage,
+    CardsPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { ContactPage } from '../pages/contact/contact';
     MyApp,
     HomePage,
     ResultPage,
-    ContactPage
+    ContactPage,
+    CardsPage
   ],
   providers: [
     StatusBar,

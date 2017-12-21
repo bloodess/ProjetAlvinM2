@@ -42,7 +42,6 @@ export class ResultPage {
   }
 
   toContactPage(m) {
-    
     this.navCtrl.push(ContactPage, {
       movie: m
     });
