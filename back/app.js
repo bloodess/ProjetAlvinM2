@@ -1,10 +1,9 @@
 "use strict";
 
-
 var express = require('express');
 var bodyParser  = require('body-parser');
 var	gestion = require('./module/gestion');
-var google = require('./module/googleapi');
+
 var app = express();
 var port = process.env.PORT || 3000;
 
@@ -26,8 +25,15 @@ app.options('/api/*', function (request, response, next) {
     response.send();
 });
 
-app.get('/images', google.images);
+
+// todo mettre en place test
+// ecrire un read me
+// finir api google probleme sur le cx
+
 app.get('/peoples', gestion.peoples);
+app.post('/films', gestion.films);
+app.post('/dataToLocal', gestion.dataToLocal);
+app.post('/imgToLocal', gestion.imgToLocal);
 
 app.listen(port);
 console.log('SERVICE - Listening on port ' + port + '...');

@@ -10,7 +10,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class RestProvider {
 
-  apiUrl = 'http://127.0.0.1:3000';
+	// apiUrl = 'http://127.0.0.1:3000';
+	apiUrl = 'https://swipew.herokuapp.com';
 
   constructor(public http: HttpClient) {
     console.log('Hello RestProvider Provider');
@@ -19,6 +20,20 @@ export class RestProvider {
 	getPeoples() {
 	  return new Promise(resolve => {
 	    this.http.get(this.apiUrl+'/peoples').subscribe(data => {
+	      resolve(data);
+	    }, err => {
+	      console.log(err);
+	    });
+	  });
+	}
+
+	getMovies(idFilms) {
+		let arg = { "filmTop" : idFilms[0], "filmBot" : idFilms[1]};
+		let url = this.apiUrl+'/films/';
+
+	  return new Promise(resolve => {
+	    this.http.post(url,arg).subscribe(data => {
+				// console.log(data);
 	      resolve(data);
 	    }, err => {
 	      console.log(err);
