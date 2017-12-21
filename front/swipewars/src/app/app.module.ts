@@ -15,13 +15,15 @@ import { RestProvider } from '../providers/rest/rest';
 import { HttpModule } from '@angular/http';
 import { SwingModule } from 'angular2-swing';
 import { ResultPage } from '../pages/result/result';
+import { ContactPage } from '../pages/contact/contact';
 
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    ResultPage
+    ResultPage,
+    ContactPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { ResultPage } from '../pages/result/result';
   entryComponents: [
     MyApp,
     HomePage,
-    ResultPage
+    ResultPage,
+    ContactPage
   ],
   providers: [
     StatusBar,
