@@ -26,12 +26,14 @@ exports.dataToLocal = function(req, res){
 		});
 	}
 }
+
 exports.imgFilmToLocal = function(req, res){
 	if(req.body.key = "key123!"){
-		swapi.getAllFilmsSwapi(function(data){
+		fs.readFile("./module/data/dataFilmsswapi.json", function(err, data){
+			console.log('DATA : '+data);
 			googleapi.addImageFilm(data, function(retour){
 				res.json(retour);
-			});
+			});	
 		});
 	}
 }

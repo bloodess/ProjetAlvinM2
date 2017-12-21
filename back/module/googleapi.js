@@ -40,7 +40,7 @@ exports.addImage = function(req, res){
 }
 
 exports.addImageFilm = function(req, res){
-
+console.log('REQ : ' + req);
   var arrayFilm = req;
   var arg = {
     headers:
@@ -48,22 +48,24 @@ exports.addImageFilm = function(req, res){
       "Content-Type": "application/json"
     }
   };
-  var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&searchType='+searchType+'&q='+arrayFilm[0].name;
-  console.log(urlbyName);
+  // var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&searchType='+searchType+'&q='+arrayFilm[0].title;
+  
 
   arrayFilm.forEach(element => {
-    var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&q='+element.name;
-    
+    var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&searchType='+searchType+'&q='+element.title;
+    console.log(urlbyName);
+
     client.get(urlbyName, arg, function(data, response) {
       if(data !== undefined){
         // todo test si la recup des data src fctnne
-        var t = data.items[0].pagemap.cse_image[0].src;
+        var t = data.items[0].link;
       }
     }).on('error', function(error) {
         logger.wlog({type: "ERROR", message: "Problème appelle google api."});
         res(false);
     });
   });
+  return true;
 }
 
   
