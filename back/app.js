@@ -34,6 +34,7 @@ app.get('/peoples', gestion.peoples);
 app.post('/films', gestion.films);
 app.post('/dataToLocal', gestion.dataToLocal);
 app.post('/imgToLocal', gestion.imgToLocal);
+app.post('/imgFilmToLocal', gestion.imgFilmToLocal);
 
 app.listen(port);
 console.log('SERVICE - Listening on port ' + port + '...');
