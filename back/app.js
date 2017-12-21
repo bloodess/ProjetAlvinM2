@@ -27,8 +27,8 @@ app.options('/api/*', function (request, response, next) {
 });
 
 // todo mettre en place test
-// todo geler les dependance packages .json
-// faire un tag sur git
+// ecrire un read me
+// finir api google probleme sur le cx
 
 app.get('/peoples', gestion.peoples);
 app.post('/films', gestion.films);

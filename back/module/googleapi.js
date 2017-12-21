@@ -6,8 +6,10 @@ var Client = require('node-rest-client').Client;
 var client = new Client();
 var searchType = 'image';
 var safe = 'off';
-var key = 'AIzaSyAfI9vDrYuRzNVHfXdxjc58dW6tInLiyNk' // Key de l'api
-var cx = '013773035180240197132:wb9fxn31moc'; // "adresse" du moteur de recherche
+var key = 'AIzaSyDEl6V6ntchSvqJZSYztzBKqgMlHmzIOs0' // Key de l'api
+//var cx = '013773035180240197132:wb9fxn31moc'; // "adresse" du moteur de recherche
+
+var cx = '010200782044674069248:3l_cxdk7hlu';
 
 var url = 'http://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&q=Luke'; // mettre le nom du personnage après le &q=
 
@@ -23,11 +25,14 @@ exports.addImage = function(req, res){
   };
   var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&q='+array[0].name; // mettre le nom du personnage après le &q=
   console.log(urlbyName);
+
   client.get(urlbyName, arg, function(data, response) {
     if(data !== undefined){
-      console.log(data);
+      //console.log(data);
       // todo test si la recup des data src fctnne
-      var t = data.items[0].pagemap.cse_image[0].src;
+    
+      //console.log(data.items[0].pagemap.cse_image[0].src);
+      //var t = data.items[0].pagemap.cse_image[0].src;
       res(true);
     }
   }).on('error', function(error) {
