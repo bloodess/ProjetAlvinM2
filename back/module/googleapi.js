@@ -32,10 +32,11 @@ exports.addImage = function(req, res){
   
   array.forEach(element => {
     var urlbyName = 'https://www.googleapis.com/customsearch/v1?key='+key+'&cx='+cx+'&searchType='+searchType+'&q='+element.name+' star wars'; // mettre le nom du personnage après le &q=
-
+    console.log('URL : '+urlbyName);
+    
     client.get(urlbyName, arg, function(data, response) {
       console.log('DATA : '+ data);
-      
+
       nbarray = nbarray + 1;
       if(data !== undefined){
         var urlimg = data.items[0].link;

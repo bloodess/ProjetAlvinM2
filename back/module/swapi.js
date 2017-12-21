@@ -47,6 +47,7 @@ exports.getPeoplesData = function(res) {
         for(var i = 0; i < 10; i++){
             // On tire un id pour selectionner un people dans la liste
             var sel = Math.round(Math.random() * (nbpeoples - 0) + 0);
+            console.log("ID des perso séléctionner en random : "+sel);
             var films = [];
             if(data[sel] !== undefined){
                 if(data[sel].hasOwnProperty('films')){
@@ -58,7 +59,7 @@ exports.getPeoplesData = function(res) {
                         i -= 1;
                     }
                     else{
-                        variablePeople.push({"id": sel});
+                        variablePeople.push(sel);
                         peoples.push({
                             "name": data[sel].name.toLowerCase(),
                             "gender": data[sel].gender,
