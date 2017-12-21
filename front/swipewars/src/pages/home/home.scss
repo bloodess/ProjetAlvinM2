@@ -19,17 +19,3 @@ page-home {
     }
       
 }
-
-@font-face {
-  font-family: 'Starjedi';
-  src: url('../../assets/fonts/Starjedi.eot');
-  src: url('../../assets/fonts/Starjedi.eot') format('embedded-opentype'),
-        url('../../assets/fonts/Starjedi.woff2') format('woff2'),
-        url('../../assets/fonts/Starjedi.woff') format('woff'),
-        url('../../assets/fonts/Starjedi.ttf') format('truetype'),
-        url('../../assets/fonts/Starjedi.svg#Starjedi') format('svg');
-  }
-
-  ion-title, h1, h2, h3, h4, h5, h6 {
-    font-family: "Starjedi", serif;
-  }
