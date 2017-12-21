@@ -32,6 +32,7 @@ exports.films = function(req, res){
  */
 exports.getPeoplesData = function(res) {
     var peoples = [];
+    var variablePeople = [];
     
     // lecture de tous les peoples dans le fichier json en local
     fs.readFile("./module/data/dataPeopleswapi.json", function(err, datas){
@@ -42,9 +43,9 @@ exports.getPeoplesData = function(res) {
             res({"erreur": "Problème sur le nombre de vos héros."})
         }
 
-        // Ici ont boucle sur 10 car nous voulons renvoyer 10 peoples aléatoire
+        // Ici on boucle sur 10 car nous voulons renvoyer 10 peoples aléatoire
         for(var i = 0; i < 10; i++){
-            // ont tire un chiffre pour selectionner un people dans la liste
+            // On tire un id pour selectionner un people dans la liste
             var sel = Math.round(Math.random() * (nbpeoples - 0) + 0);
             var films = [];
             if(data[sel] !== undefined){
@@ -53,15 +54,20 @@ exports.getPeoplesData = function(res) {
                         var taillestring = data[sel].films[u].length;
                         films.push(parseInt(data[sel].films[u].substring(taillestring-2, taillestring-1)));
                     }
-                
-                    peoples.push({
-                        "name": data[sel].name,
-                        "gender": data[sel].gender,
-                        "height": data[sel].height,
-                        "mass": data[sel].mass,
-                        "url_images": data[sel].url_images,
-                        "films" : films
-                    });
+                    if(variablePeople.includes(sel)){
+                        i -= 1;
+                    }
+                    else{
+                        variablePeople.push({"id": sel});
+                        peoples.push({
+                            "name": data[sel].name.toLowerCase(),
+                            "gender": data[sel].gender,
+                            "height": data[sel].height,
+                            "mass": data[sel].mass,
+                            "url_images": data[sel].url_images,
+                            "films" : films
+                        });
+                    }
                 }
             }
         }

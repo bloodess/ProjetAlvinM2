@@ -1,7 +1,28 @@
 page-contact {
 
+  .fixed-content {
+    background-image: url(http://www.open2d.com/data/uploads/2015/02/4.jpg);
+  }
+  
+  #actionBloc {
+    text-align: center;
+  }
+
+  #movie h1, h2, h3, h4{
+    color: #FFD700;
+  }
+
+  #movie p{
+    color: #ffffff;
+  }
+
+  #contact {
+    color: #ffffff;
+  }
+
+  #actionBloc button {
+    color: #FFD700;
+    border-color: #FFD700;
+  }
 }
 
-#actionBloc {
-    text-align: center;
-}

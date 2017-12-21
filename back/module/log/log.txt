@@ -6,3 +6,6 @@ Thu Dec 21 2017 13:49:43 GMT+0100 (Paris, Madrid) - ERROR - Problème appelle go
 Thu Dec 21 2017 13:49:43 GMT+0100 (Paris, Madrid) - ERROR - Problème appelle google api.
 Thu Dec 21 2017 14:34:15 GMT+0100 (Paris, Madrid) - INFOS - Prepare data local.
 Thu Dec 21 2017 14:36:06 GMT+0100 (Paris, Madrid) - INFOS - prepare data peoples image : 
+Thu Dec 21 2017 16:30:23 GMT+0100 (CET) - INFOS - Prepare data local.
+Thu Dec 21 2017 16:31:24 GMT+0100 (CET) - INFOS - prepare data peoples image : 
+Thu Dec 21 2017 16:32:24 GMT+0100 (CET) - INFOS - prepare data peoples image : 
