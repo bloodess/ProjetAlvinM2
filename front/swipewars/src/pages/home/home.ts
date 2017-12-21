@@ -1,12 +1,6 @@
-import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
-import { NavController, Slides, LoadingController } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { NavController, LoadingController } from 'ionic-angular';
 import 'rxjs/Rx';
-
-import {
-  StackConfig,
-  DragEvent,
-  SwingStackComponent,
-  SwingCardComponent} from 'angular2-swing';
 
 import { CardsPage } from '../cards/cards';
 
