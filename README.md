@@ -35,10 +35,10 @@
   <a href="#credits">Credits</a> •
 </p>
 
-![screenshot](./ressources/Screenshot-Card.png)
-![screenshot](./ressources/Screenshot-Home.png)
-![screenshot](./ressources/Screenshot-Movie.png)
-![screenshot](./ressources/Screenshot-Result.png)
+![alt text](./ressources/Screenshot-Card.png)
+![alt text](./ressources/Screenshot-Home.png)
+![alt text](./ressources/Screenshot-Movie.png)
+![alt text](./ressources/Screenshot-Result.png)
 
 ## Presentation
 Cette application est découper en 3 parties:
