@@ -1,3 +1,17 @@
 back/node_modules/
 back_auto/node_modules/
 front/swipewars/node_modules/
+
+
+front/swipewars/tmp/
+front/swipewars/temp/
+front/swipewars/.sourcemaps/
+front/swipewars/.sass-cache/
+front/swipewars/.tmp/
+front/swipewars/hooks/
+
+front/swipewars/platforms/
+front/swipewars/plugins/
+front/swipewars/plugins/android.json
+front/swipewars/plugins/ios.json
+front/swipewars/www/

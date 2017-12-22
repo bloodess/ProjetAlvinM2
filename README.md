@@ -28,13 +28,28 @@
 </p>
 
 <p align="center">
+  <a href="#Presentation">Presentation</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#download">Download</a> •
   <a href="#credits">Credits</a> •
 </p>
 
-![screenshot](https://raw.githubusercontent.com/amitmerchant1990/electron-markdownify/master/img/markdownify.gif)
+![screenshot](./ressources/Screenshot-Card.png)
+![screenshot](./ressources/Screenshot-Home.png)
+![screenshot](./ressources/Screenshot-Movie.png)
+![screenshot](./ressources/Screenshot-Result.png)
+
+## Presentation
+Cette application est découper en 3 parties:
+- Le front contient le code de l'application mobile.
+
+- Le Back contient l'API REST, cette API permet de récuperer les données pour le bon fonctionnement de l'application. Dans cette API les données sont chargées en "local" afin d'améliorer le temps de réponse de l'application, cela permet aussi en cas de panne des api extérieurs (google api et swapi) un bon fonctionnement.
+
+- Le Back_auto est un service permettant d'appeller l'API REST 'back' afin de générer les données automatiquement 1 fois par jours.
+
+
+
 
 ## Key Features
 
@@ -47,19 +62,44 @@
 
 To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
 
+
 ```bash
 # Clone this repository
 $ git clone https://github.com/bloodess/ProjetAlvinM2
 
+
+Client :
 # Go into the repository
-$ cd ProjetAlvinM2
+$ cd ProjetAlvinM2/front/swipewars
 
 # Install dependencies
 $ npm install
 
 # Run the app
 $ ionic serve
+
+Back :
+# Go into the repository
+cd ProjetAlvinM2/back
+
+# Install dependencies
+$ npm install
+
+#Run serveur
+npm start
+
+Back :
+# Go into the repository
+cd ProjetAlvinM2/back_auto
+
+# Install dependencies
+$ npm install
+
+#Run serveur
+npm start
+
 ```
+
 
 Note: If you're using Linux Bash for Windows, [see this guide](https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/) or use `node` from the command prompt.
 
