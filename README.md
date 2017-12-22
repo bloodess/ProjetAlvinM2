@@ -43,6 +43,7 @@
 Cette application est découper en 3 parties:
 - Le front contient le code de l'application mobile.
 
+Les parties back se trouve héberger sur heroku, nous vous fournissons le code dans ce dépots. En revanche l'application front est connecter au service back depuis heroku.
 - Le Back contient l'API REST, cette API permet de récuperer les données pour le bon fonctionnement de l'application. Dans cette API les données sont chargées en "local" afin d'améliorer le temps de réponse de l'application, cela permet aussi en cas de panne des api extérieurs (google api et swapi) un bon fonctionnement.
 
 - Le Back_auto est un service permettant d'appeller l'API REST 'back' afin de générer les données automatiquement 1 fois par jours.
