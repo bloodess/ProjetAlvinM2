@@ -35,9 +35,9 @@
   <a href="#credits">Credits</a> •
 </p>
 
-![alt text](./ressources/Screenshot-Home.png)
 ![alt text](./ressources/Screenshot-Card.png)
 ![alt text](./ressources/Screenshot-Movie.png)
+![alt text](./ressources/Screenshot-Result.png)
 
 ## Presentation
 Cette application est découper en 3 parties:
