@@ -78,7 +78,7 @@ $ npm install
 # Run the app
 $ ionic serve
 
-Back :
+back :
 # Go into the repository
 cd ProjetAlvinM2/back
 
@@ -88,7 +88,7 @@ $ npm install
 #Run serveur
 npm start
 
-Back :
+back_auto :
 # Go into the repository
 cd ProjetAlvinM2/back_auto
 
