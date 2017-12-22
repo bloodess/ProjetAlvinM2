@@ -28,7 +28,7 @@
 </p>
 
 <p align="center">
-  <a href="#Presentation">Presentation</a> •
+  <a href="#presentation">Presentation</a> •
   <a href="#key-features">Key Features</a> •
   <a href="#how-to-use">How To Use</a> •
   <a href="#download">Download</a> •
