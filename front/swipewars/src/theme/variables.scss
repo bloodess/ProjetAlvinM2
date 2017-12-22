@@ -88,3 +88,15 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+$starjedi-font-path: $font-path !default;
+
+@font-face {
+    font-family: 'Starjedi';
+    font-style: normal;
+    font-weight: 300;
+    src:    local("Starjedi"),
+            url("#{$starjedi-font-path}/Starjedi.woff2") format("woff2"), 
+            url("#{$starjedi-font-path}/Starjedi.woff") format("woff"), 
+            url("#{$starjedi-font-path}/Starjedi.ttf") format("truetype");
+  }
